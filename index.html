@@ -1,0 +1,45 @@
+<!doctype html>
+<html ng-app="todoApp">
+
+<head>
+  <!-- META -->
+  <meta charset="utf-8">
+  <title>Todos</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="core.js"></script>
+</head>
+
+<body ng-controller="mainController">
+  <div class="container">
+    <!-- HEADER AND TODO COUNT -->
+    <div class="text-center">
+      <h1><span class="label label-info">Todos: {{ todos.length }}</span></h1>
+    </div>
+    <!-- TODO LIST -->
+    <div id="todo-list" class="row">
+      <div class="col-sm-4 col-sm-offset-4">
+        <div class="checkbox" ng-repeat="todo in todos">
+          <label>
+            <input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ todo.text }}
+          </label>
+        </div>
+      </div>
+    </div>
+    <!-- ADD TODO FORM -->
+    <div id="todo-form" class="row">
+      <div class="col-sm-8 col-sm-offset-2 text-center">
+        <form>
+          <div class="form-group">
+            <input type="text" class="form-control text-center" placeholder="Enter a new todo" ng-model="formData.text">
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg" ng-click="createTodo()">Add</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
