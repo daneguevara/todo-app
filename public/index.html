@@ -1,30 +1,30 @@
 <!doctype html>
-<html ng-app="todoApp">
+<html>
 
 <head>
-  <!-- META -->
-  <meta charset="utf-8">
   <title>Todos</title>
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="style.css">
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
   <script src="core.js"></script>
 </head>
 
-<body ng-controller="mainController">
-  <div class="container">
+<body ng-app="todoApp">
+  <div class="container" ng-controller="mainController">
     <!-- HEADER AND TODO COUNT -->
     <div class="text-center">
-      <h1><span class="label label-info">Todos: {{ todos.length }}</span></h1>
+      <h1><div class="label label-info">Todos</div></h1>
+      <h2><div class="label label-success">Completed: {{ completed() }}</div><h2>
+      <h2><div class="label label-warning">Active: {{ active() }}</div><h2>
     </div>
     <!-- TODO LIST -->
     <div id="todo-list" class="row">
       <div class="col-sm-4 col-sm-offset-4">
         <div class="checkbox" ng-repeat="todo in todos">
-          <label>
-            <input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ todo.text }}
-          </label>
+          <input class="todo-checkbox" type="checkbox" ng-model="todo.done" ng-click="completeTodo(todo)">
+          <label class="todo-label">{{ todo.text }}</label>
+          <button class="btn btn-danger btn-xs" ng-click="deleteTodo(todo)">Delete</button>
         </div>
       </div>
     </div>

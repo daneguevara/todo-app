@@ -1,0 +1,16 @@
+ html {
+   overflow-y: scroll;
+ }
+
+ body {
+   padding-top: 1em;
+ }
+
+ #todo-list {
+   margin-bottom: 1em;
+ }
+
+ .todo-checkbox:checked + .todo-label {
+   text-decoration: line-through;
+   color: blue;
+ }
