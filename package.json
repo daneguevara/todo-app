@@ -1,22 +1,22 @@
 {
-  "name": "todo-client",
+  "name": "todo-app",
   "version": "1.0.0",
   "description": "Todo Client Application",
-  "main": "client.js",
+  "main": "server.js",
   "scripts": {
-    "test": "",
-    "start": "node client.js"
+    "test": "jasmine",
+    "start": "node server"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/daneguevara/todo-client.git"
+    "url": "git+https://github.com/daneguevara/todo-app.git"
   },
   "author": "Dane Guevara",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/daneguevara/todo-client/issues"
+    "url": "https://github.com/daneguevara/todo-app/issues"
   },
-  "homepage": "https://github.com/daneguevara/todo-client#readme",
+  "homepage": "https://github.com/daneguevara/todo-app#readme",
   "dependencies": {
     "body-parser": "^1.15.0",
     "express": "^4.13.4"
