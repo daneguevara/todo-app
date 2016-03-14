@@ -1,4 +1,4 @@
-# todo-app
+# Todo Web Application
 
 # Installation
 Install and start a [todo-services](https://github.com/daneguevara/todo-services) web server
@@ -14,4 +14,4 @@ npm install
 ...
 npm start
 ```
-Note: Make sure your todo-services URL is configured correctly in server.js
+Note: Make sure your todo-services URL is configured correctly in public/core.js
